@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On 
+ 	RewriteCond %{REQUEST_FILENAME} !-f
+ 	RewriteCond %{REQUEST_FILENAME} !-d	
+	RewriteRule ^api/(.*)$	api.php?request=$1				[L]
+	RewriteRule ^index(.*)  public/index.php?request=index$1 	[L]
+	RewriteRule ^crypt(.*)  public/index.php?request=crypt$1 	[L]
+	RewriteRule ^upload(.*) public/index.php?request=upload$1 	[L]
+	RewriteRule ^$  		public/index.php    			[L]
+</IfModule>
